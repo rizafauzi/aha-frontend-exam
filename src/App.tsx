@@ -1,6 +1,11 @@
 import React from 'react'
-import logo from './logo.svg'
 import './App.css'
+import Button from '@components/atoms/Button'
+import Input from '@components/atoms/Input'
+import Slider from '@components/atoms/Slider'
+import Sidebar from '@components/organisms/FollowTab'
+import Navigation from '@components/organisms/Navigation'
+import Layout from '@components/templates/Layout/Layout'
 
 /**
  * Render App Component
@@ -8,21 +13,16 @@ import './App.css'
  */
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex flex-row">
+      <Navigation />
+      <Layout>
+        <div>
+          <Button>Edit Button</Button>
+          <Input onChange={() => {}} value="" />
+          <Slider value={9} min={0} max={10} />
+        </div>
+      </Layout>
+      <Sidebar />
     </div>
   )
 }
